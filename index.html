@@ -10,6 +10,9 @@
             background-color: #1a1a2e;
             color: #e0e0e0;
             font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
         }
         h1, h2 {
             color: #a06cd5;
@@ -18,32 +21,56 @@
         nav {
             background: #0f0f1a;
             padding: 15px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 200px;
+            overflow-y: auto;
         }
         nav a {
             color: #e0e0e0;
             font-weight: bold;
-            margin: 0 15px;
+            margin: 10px 0;
             text-decoration: none;
+            padding: 10px;
+            width: 100%;
+            display: block;
         }
-        .container {
+        nav a:hover, nav a.active {
+            background-color: #a06cd5;
+            color: #0f0f1a;
+        }
+        .content {
+            margin-left: 220px;
             padding: 50px;
+            width: calc(100% - 220px);
         }
-        .projects img:hover {
-            transform: scale(1.05);
-        }
-        .about {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .about img {
-            width: 200px;
-            border-radius: 50%;
-        }
-        .skills p {
-            font-size: 18px;
+        html {
+            scroll-behavior: smooth;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let sections = document.querySelectorAll("section");
+            let navLinks = document.querySelectorAll("nav a");
+            
+            window.addEventListener("scroll", function () {
+                let scrollPosition = window.scrollY;
+                
+                sections.forEach(sec => {
+                    let top = sec.offsetTop - 100;
+                    let height = sec.offsetHeight;
+                    let id = sec.getAttribute("id");
+                    
+                    if (scrollPosition >= top && scrollPosition < top + height) {
+                        navLinks.forEach(link => link.classList.remove("active"));
+                        document.querySelector(`nav a[href='#${id}']`).classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <nav>
@@ -53,40 +80,34 @@
         <a href="#contact">Contact</a>
     </nav>
     
-    <section class="hero">
-        <h1>D Navya</h1>
-        <p>Aspiring AI Engineer | Software Developer</p>
-    </section>
-    
-    <section id="about" class="container about">
-        <img src="profile.jpg" alt="D Navya">
-        <div>
+    <div class="content">
+        <section id="about" class="about">
             <h2>About Me</h2>
-            <p>I'm a Computer Science Engineering student specializing in Artificial Intelligence at Amrita Vishwa Vidyapeetham (CGPA: 8.38). Passionate about AI, data science, and software development, I aim to contribute to innovative projects that drive technological advancement.</p>
+            <p>I'm a Computer Science Engineering student specializing in Artificial Intelligence at Amrita Vishwa Vidyapeetham. Passionate about AI, data science, and software development, I aim to contribute to innovative projects that drive technological advancement.</p>
             <p>My academic journey has equipped me with a strong foundation in programming, algorithm design, and analytical problem-solving, which I leverage to develop efficient software solutions.</p>
-        </div>
-    </section>
-    
-    <section id="projects" class="container projects">
-        <h2>Projects</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            <a href="https://github.com/d-navya/project1"><img src="project1.jpg" alt="Project 1" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-            <a href="https://github.com/d-navya/project2"><img src="project2.jpg" alt="Project 2" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-            <a href="https://github.com/d-navya/project3"><img src="project3.jpg" alt="Project 3" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-            <a href="https://github.com/d-navya/project4"><img src="project4.jpg" alt="Project 4" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-            <a href="https://github.com/d-navya/project5"><img src="project5.jpg" alt="Project 5" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-            <a href="https://github.com/d-navya/project6"><img src="project6.jpg" alt="Project 6" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-        </div>
-    </section>
-    
-    <section id="skills" class="container skills">
-        <h2>Skills</h2>
-        <p>C++, Python, Java, C, Matlab, HTML, CSS, JavaScript, pandas, numpy, matplotlib, Scikit-Learn, Algorithm Optimization, Data Analysis & Visualization, Comparative Analysis, Technical Documentation & Reporting, Collaboration & Knowledge Sharing, Critical Thinking & Problem-Solving</p>
-    </section>
-    
-    <section id="contact" class="container contact">
-        <h2>Contact</h2>
-        <p>Email: duttulurunavya@gmail.com | <a href="https://www.linkedin.com/in/d-navya/" target="_blank">LinkedIn</a> | <a href="https://github.com/d-navya" target="_blank">GitHub</a></p>
-    </section>
+        </section>
+        
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <a href="https://github.com/d-navya/project1"><img src="project1.jpg" alt="Project 1" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+                <a href="https://github.com/d-navya/project2"><img src="project2.jpg" alt="Project 2" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+                <a href="https://github.com/d-navya/project3"><img src="project3.jpg" alt="Project 3" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+                <a href="https://github.com/d-navya/project4"><img src="project4.jpg" alt="Project 4" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+                <a href="https://github.com/d-navya/project5"><img src="project5.jpg" alt="Project 5" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+                <a href="https://github.com/d-navya/project6"><img src="project6.jpg" alt="Project 6" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+            </div>
+        </section>
+        
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <p>C++, Python, Java, C, Matlab, HTML, CSS, JavaScript, pandas, numpy, matplotlib, Scikit-Learn, Algorithm Optimization, Data Analysis & Visualization, Comparative Analysis, Technical Documentation & Reporting, Collaboration & Knowledge Sharing, Critical Thinking & Problem-Solving</p>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:duttulurunavya@gmail.com">duttulurunavya@gmail.com</a> | <a href="https://www.linkedin.com/in/d-navya/" target="_blank">LinkedIn</a> | <a href="https://github.com/d-navya" target="_blank">GitHub</a></p>
+        </section>
+    </div>
 </body>
 </html>
