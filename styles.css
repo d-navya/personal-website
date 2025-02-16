@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #2C003E, #FFB6C1);
+    color: white;
+    scroll-behavior: smooth;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(44, 0, 62, 0.9);
+    padding: 10px 0;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+section {
+    padding: 100px 0;
+    text-align: center;
+}
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.projects, .skills, .contact {
+    background: rgba(255, 182, 193, 0.2);
+}
