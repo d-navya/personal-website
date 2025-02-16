@@ -9,20 +9,39 @@
         body {
             background-color: #1a1a2e;
             color: #e0e0e0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         h1, h2 {
-            color: #836FFF;
+            color: #a06cd5;
+            font-weight: bold;
         }
         nav {
             background: #0f0f1a;
+            padding: 15px;
         }
         nav a {
             color: #e0e0e0;
             font-weight: bold;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 50px;
         }
         .projects img:hover {
             transform: scale(1.05);
+        }
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .about img {
+            width: 200px;
+            border-radius: 50%;
+        }
+        .skills p {
+            font-size: 18px;
         }
     </style>
 </head>
@@ -39,11 +58,12 @@
         <p>Aspiring AI Engineer | Software Developer</p>
     </section>
     
-    <section id="about" class="container" style="display: flex; align-items: center; justify-content: space-between;">
-        <img src="profile.jpg" alt="D Navya" style="width: 200px; border-radius: 50%;">
+    <section id="about" class="container about">
+        <img src="profile.jpg" alt="D Navya">
         <div>
             <h2>About Me</h2>
             <p>I'm a Computer Science Engineering student specializing in Artificial Intelligence at Amrita Vishwa Vidyapeetham (CGPA: 8.38). Passionate about AI, data science, and software development, I aim to contribute to innovative projects that drive technological advancement.</p>
+            <p>My academic journey has equipped me with a strong foundation in programming, algorithm design, and analytical problem-solving, which I leverage to develop efficient software solutions.</p>
         </div>
     </section>
     
