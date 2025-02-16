@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D Navya | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        h2 {
+            color: #FF69B4;
+            font-size: 2em;
+        }
+    </style>
 </head>
 <body>
     <nav>
         <a href="#about">About</a>
-        <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
@@ -18,27 +23,31 @@
     <section class="hero">
         <h1>D Navya</h1>
         <p>Aspiring AI Engineer | Software Developer</p>
-        <a href="d_navya_resume.pdf" download style="color: lightpink; font-weight: bold;">Download Resume</a>
     </section>
     
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>I'm a Computer Science Engineering student specializing in Artificial Intelligence. Passionate about AI, data science, and software development, I aim to contribute to innovative projects that drive technological advancement.</p>
-    </section>
-    
-    <section id="education" class="container">
-        <h2>Education</h2>
-        <p><strong>Amrita Vishwa Vidyapeetham</strong> - B.Tech in CSE (AI) | CGPA: 8.38</p>
+    <section id="about" class="container" style="display: flex; align-items: center; justify-content: space-between;">
+        <img src="profile.jpg" alt="D Navya" style="width: 200px; border-radius: 50%;">
+        <div>
+            <h2>About Me</h2>
+            <p>I'm a Computer Science Engineering student specializing in Artificial Intelligence at Amrita Vishwa Vidyapeetham (CGPA: 8.38). Passionate about AI, data science, and software development, I aim to contribute to innovative projects that drive technological advancement.</p>
+        </div>
     </section>
     
     <section id="projects" class="container projects">
         <h2>Projects</h2>
-        <p>Urban Navigation Optimization, Network Security, AI Music Processing, Data Compression, and more.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <a href="https://github.com/d-navya/project1"><img src="project1.jpg" alt="Project 1" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+            <a href="https://github.com/d-navya/project2"><img src="project2.jpg" alt="Project 2" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+            <a href="https://github.com/d-navya/project3"><img src="project3.jpg" alt="Project 3" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+            <a href="https://github.com/d-navya/project4"><img src="project4.jpg" alt="Project 4" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+            <a href="https://github.com/d-navya/project5"><img src="project5.jpg" alt="Project 5" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+            <a href="https://github.com/d-navya/project6"><img src="project6.jpg" alt="Project 6" style="width: 150px; height: 150px; border-radius: 10px;"></a>
+        </div>
     </section>
     
     <section id="skills" class="container skills">
         <h2>Skills</h2>
-        <p>Python, C++, Java, AI/ML, Web Dev, Algorithm Optimization</p>
+        <p>C++, Python, Java, C, Matlab, HTML, CSS, JavaScript, pandas, numpy, matplotlib, Scikit-Learn, Algorithm Optimization, Data Analysis & Visualization, Comparative Analysis, Technical Documentation & Reporting, Collaboration & Knowledge Sharing, Critical Thinking & Problem-Solving</p>
     </section>
     
     <section id="contact" class="container contact">
