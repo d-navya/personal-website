@@ -300,7 +300,8 @@ body {
     align-items: center;
     background-color: #0d0d0d; /* Set background to match the page's theme */
     padding: 20px 0;
-    position: absolute; /* Position it at the bottom */
+    position: relative; /* Position it at the bottom */
+    top: 10px;
     bottom: 0; /* Ensures it's at the bottom of the page */
     width: 100%; /* Makes sure the navbar takes the full width */
 }
