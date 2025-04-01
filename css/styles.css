@@ -11,119 +11,54 @@ body {
     background-color: #0d0d0d;
     font-family: 'VT323', monospace;
     text-align: center;
-    color: #fff;
-    /* Removed overflow-x: hidden to prevent clipping */
+    color: #ff66cc; /* Soft pink text */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ensure content stays visible and not pushed off-screen */
+    justify-content: flex-start;
 }
 
+/* General Container */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* Added min-height: 100vh to ensure full screen coverage */
     min-height: 100vh;
 }
 
-.intro-screen {
-    max-width: 800px;
-    text-align: center;
-    padding: 40px;
-    animation: fadeIn 2s ease-out;
-    margin-top: 20px; /* Ensure intro section is spaced properly */
-}
-
+/* Title */
 .title {
     font-size: 80px;
-    color: #ff00ff; /* Bright color for text */
-    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 12px #ff00ff; /* Subtle glow */
-    animation: neon-glow 2s infinite alternate, titleBounce 2s ease-in-out infinite;
+    color: #ff66cc; /* Soft pink */
 }
 
+/* Subtitle */
 .subtitle {
     font-size: 24px;
-    color: #00ffff; /* Light cyan for subtitle */
-    text-shadow: 0 0 5px #00ffff, 0 0 8px #00ffff; /* Softer glow for the subtitle */
+    color: #ff99cc; /* Lighter pink */
     margin-top: 40px;
-    animation: subtitle-blink 1s infinite;
 }
 
-.start-btn {
-    font-size: 24px;
-    padding: 20px 40px;
-    border-radius: 12px;
+/* Buttons */
+.start-btn, .back-to-home, .nav-btn {
+    font-size: 20px;
+    padding: 12px 24px;
+    border-radius: 8px;
     text-decoration: none;
     color: #000;
-    background: #00ffff;
-    margin-top: 60px;
-    box-shadow: 0 0 10px #00ffff, 0 0 12px #00ffff; /* Soft glow */
+    background: #ff66cc; /* Pink */
+    border: 3px solid #ff66cc;
     transition: all 0.3s ease;
-    border: 3px solid #00ffff;
-}
-
-.start-btn:hover {
-    background: #ff00ff;
-    color: #fff;
-    box-shadow: 0 0 15px #ff00ff, 0 0 20px #ff00ff;
-    transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-    .title {
-        font-size: 50px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
-
-    .start-btn {
-        font-size: 18px;
-        padding: 15px 30px;
-    }
-}
-
-.about-screen {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 30px;
-    text-align: center;
-}
-
-.character-container {
-    margin-top: 30px;
-}
-
-.character {
-    height: 200px;
-    width: 250px;
-    animation: bounce 10s infinite alternate;
-}
-
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
-}
-
-.bio {
-    font-size: 18px;
-    color: #ff00ff;
     margin-top: 20px;
-    padding: 0 15px;
 }
 
-.bio:hover {
-    color: #00ffff;
-    text-decoration: underline;
+.start-btn:hover, .back-to-home:hover, .nav-btn:hover {
+    background: #ff99cc; /* Lighter pink */
+    border-color: #ff99cc;
 }
 
-.start-btn {
-    margin-top: 40px;
-}
-
+/* Project Grid */
 .project-grid {
     display: flex;
     justify-content: space-around;
@@ -136,7 +71,7 @@ body {
     text-align: center;
     width: 250px;
     padding: 20px;
-    border: 3px solid #00ffff;
+    border: 3px solid #ff66cc;
     border-radius: 12px;
     background-color: #222;
     transition: all 0.3s ease;
@@ -144,7 +79,6 @@ body {
 
 .project:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 8px #ff00ff;
 }
 
 .project img {
@@ -154,119 +88,11 @@ body {
 
 .project p {
     font-size: 18px;
-    color: #ff00ff;
+    color: #ff66cc;
     margin-top: 10px;
 }
 
-/* Glowing effect for the "Back to Home" button */
-.back-to-home {
-    font-size: 24px;
-    padding: 15px 25px;
-    background-color: #ff00ff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff; /* Softer glow */
-    margin-top: 60px;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border: 3px solid #ff00ff;
-}
-
-.back-to-home:hover {
-    background-color: #00ffff;
-    box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
-    transform: scale(1.1);
-}
-
-/* Glow effect animation */
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
-    }
-    50% {
-        box-shadow: 0 0 10px #ff66ff, 0 0 15px #ff66ff;
-    }
-    100% {
-        box-shadow: 0 0 12px #ff00ff, 0 0 18px #ff00ff;
-    }
-}
-
-.back-to-home {
-    animation: glow 2s ease-in-out infinite;
-}
-
-/* Button Styling */
-.glow-btn, .back-to-home {
-    font-size: 20px;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    background: #00ffff;
-    color: #000;
-    box-shadow: 0 0 8px #00ffff;
-    border: 3px solid #00ffff;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-.glow-btn:hover, .back-to-home:hover {
-    background: #ff00ff;
-    color: #fff;
-    box-shadow: 0 0 15px #ff00ff;
-    transform: scale(1.1);
-}
-
-/* More About Me Page Styling */
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-/* Keep the main title centered */
-.title {
-    text-align: center;
-}
-
-/* Move everything else to the left */
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligns text and lists to the left */
-}
-
-.favorites-section {
-    margin: 40px 0;
-}
-
-.favorites-section h2 { 
-    font-size: 26px;
-    color: #ff00ff;
-    text-align: left; /* Make sure section headers align left */
-}
-
-.favorites-list {
-    list-style: none;
-    font-size: 22px;
-    color: #fff;
-    padding-left: 0; /* Removes extra indentation */
-}
-
-.favorites-list li {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 5px;
-    margin: 8px 0;
-}
-
-/* "Back to About" Button */
-.back-to-home {
-    display: inline-block;
-    margin-top: 30px;
-}
-
-/* Contact Page Styling */
+/* Contact Page */
 .contact-links {
     margin-top: 20px;
     text-align: left;
@@ -274,19 +100,19 @@ body {
 
 .contact-links p {
     font-size: 20px;
-    color: #fff;
+    color: #ff66cc;
     margin: 10px 0;
 }
 
 .contact-links i {
-    color: #ff00ff;
+    color: #ff99cc;
     margin-right: 10px;
 }
 
 /* Typewriter Effect */
 .typewriter {
     font-size: 20px;
-    color: #00ffff;
+    color: #ff66cc;
     border-right: 2px solid;
     display: inline-block;
     white-space: nowrap;
@@ -294,44 +120,18 @@ body {
     animation: typing 2s steps(20, end) forwards, blink 0.8s infinite;
 }
 
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-.nav-btn {
-    font-size: 24px;
-    padding: 15px 30px;
-    background-color: #ff00ff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    display: inline-block;
-    margin-top: 30px;
-    border: 3px solid #ff00ff;
-    box-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff; 
-    transition: all 0.3s ease;
-    animation: glow 2s infinite alternate;
-}
-
-.nav-btn:hover {
-    background-color: #00ffff;
-    box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
-    transform: scale(1.1);
-}
-
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .title {
+        font-size: 50px;
     }
-    50% {
-        box-shadow: 0 0 12px #ff66ff, 0 0 18px #ff66ff;
+
+    .subtitle {
+        font-size: 18px;
     }
-    100% {
-        box-shadow: 0 0 15px #ff00ff, 0 0 22px #ff00ff;
+
+    .start-btn {
+        font-size: 18px;
+        padding: 10px 20px;
     }
 }
