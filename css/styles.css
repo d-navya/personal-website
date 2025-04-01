@@ -12,11 +12,10 @@ body {
     font-family: 'VT323', monospace;
     text-align: center;
     color: #fff;
-    /* Removed overflow-x: hidden to prevent clipping */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ensure content stays visible and not pushed off-screen */
+    justify-content: flex-start;
 }
 
 .container {
@@ -24,7 +23,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* Added min-height: 100vh to ensure full screen coverage */
     min-height: 100vh;
 }
 
@@ -33,17 +31,18 @@ body {
     text-align: center;
     padding: 40px;
     animation: fadeIn 2s ease-out;
-    margin-top: 20px; /* Ensure intro section is spaced properly */
+    margin-top: 20px;
 }
 
 .title {
     font-size: 80px;
     color: #ff00ff; /* Bright color for text */
+    white-space: nowrap; /* Prevents text from wrapping */
 }
 
 .subtitle {
     font-size: 24px;
-    color: #00ffff; /* Light cyan for subtitle */
+    color: #00ffff; /* Neon cyan */
     margin-top: 40px;
 }
 
@@ -56,12 +55,13 @@ body {
     background: #00ffff;
     margin-top: 60px;
     border: 3px solid #00ffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .start-btn:hover {
     background: #ff00ff;
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.1); /* Hover scale effect */
 }
 
 @media (max-width: 768px) {
@@ -161,23 +161,13 @@ body {
     margin-top: 60px;
     display: inline-block;
     border: 3px solid #ff00ff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .back-to-home:hover {
     background-color: #00ffff;
-    transform: scale(1.1);
-}
-
-/* Button Styling */
-.glow-btn, .back-to-home {
-    font-size: 20px;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    background: #00ffff;
-    color: #000;
-    border: 3px solid #00ffff;
-    margin-top: 20px;
+    color: #fff;
+    transform: scale(1.1); /* Hover scale effect */
 }
 
 /* More About Me Page Styling */
@@ -187,16 +177,14 @@ body {
     padding: 20px;
 }
 
-/* Keep the main title centered */
 .title {
     text-align: center;
 }
 
-/* Move everything else to the left */
 .content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligns text and lists to the left */
+    align-items: flex-start;
 }
 
 .favorites-section {
@@ -206,14 +194,14 @@ body {
 .favorites-section h2 { 
     font-size: 26px;
     color: #ff00ff;
-    text-align: left; /* Make sure section headers align left */
+    text-align: left;
 }
 
 .favorites-list {
     list-style: none;
     font-size: 22px;
     color: #fff;
-    padding-left: 0; /* Removes extra indentation */
+    padding-left: 0;
 }
 
 .favorites-list li {
@@ -227,6 +215,7 @@ body {
 .back-to-home {
     display: inline-block;
     margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Contact Page Styling */
@@ -266,6 +255,7 @@ body {
     50% { border-color: transparent; }
 }
 
+/* Navigation Button (Same theme as other buttons) */
 .nav-btn {
     font-size: 24px;
     padding: 15px 30px;
@@ -281,6 +271,24 @@ body {
 
 .nav-btn:hover {
     background-color: #00ffff;
-    box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
-    transform: scale(1.1);
+    color: #fff;
+    transform: scale(1.1); /* Hover scale effect */
+}
+
+.glow-btn {
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    background: #00ffff;
+    color: #000;
+    border: 3px solid #00ffff;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.glow-btn:hover {
+    background: #ff00ff;
+    color: #fff;
+    transform: scale(1.1); /* Hover scale effect */
 }
