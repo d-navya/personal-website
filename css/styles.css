@@ -337,3 +337,35 @@ body {
     display: inline-block;
     margin: 10px 0; /* Adds vertical spacing between the buttons */
 }
+
+/* Navbar */
+.navbar {
+    margin-top: auto; /* Pushes navbar to the bottom of the page */
+    padding: 20px 0;
+    text-align: center;
+    background-color: transparent; /* Make navbar background transparent */
+    border-top: none; /* Ensures no gray line or border on top */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centers the navbar items */
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar .nav-link {
+    text-decoration: none;
+    color: #ff00ff;
+    font-size: 18px;
+}
+
+.navbar .nav-link:hover {
+    color: #00ffff;
+    transform: scale(1.1);
+}
