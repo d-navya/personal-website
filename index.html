@@ -3,111 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D Navya | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: #1a1a2e;
-            color: #e0e0e0;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        h1, h2 {
-            color: #a06cd5;
-            font-weight: bold;
-        }
-        nav {
-            background: #0f0f1a;
-            padding: 15px;
-            position: fixed;
-            left: 0;
-            top: 0;
-            height: 100vh;
-            width: 200px;
-            overflow-y: auto;
-        }
-        nav a {
-            color: #e0e0e0;
-            font-weight: bold;
-            margin: 10px 0;
-            text-decoration: none;
-            padding: 10px;
-            width: 100%;
-            display: block;
-        }
-        nav a:hover, nav a.active {
-            background-color: #a06cd5;
-            color: #0f0f1a;
-        }
-        .content {
-            margin-left: 220px;
-            padding: 50px;
-            width: calc(100% - 220px);
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let sections = document.querySelectorAll("section");
-            let navLinks = document.querySelectorAll("nav a");
-            
-            window.addEventListener("scroll", function () {
-                let scrollPosition = window.scrollY;
-                
-                sections.forEach(sec => {
-                    let top = sec.offsetTop - 100;
-                    let height = sec.offsetHeight;
-                    let id = sec.getAttribute("id");
-                    
-                    if (scrollPosition >= top && scrollPosition < top + height) {
-                        navLinks.forEach(link => link.classList.remove("active"));
-                        document.querySelector(`nav a[href='#${id}']`).classList.add("active");
-                    }
-                });
-            });
-        });
-    </script>
+    <title>Pixel Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    
-    <div class="content">
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <p>I'm a Computer Science Engineering student specializing in Artificial Intelligence at Amrita Vishwa Vidyapeetham. Passionate about AI, data science, and software development, I aim to contribute to innovative projects that drive technological advancement.</p>
-            <p>My academic journey has equipped me with a strong foundation in programming, algorithm design, and analytical problem-solving, which I leverage to develop efficient software solutions.</p>
-        </section>
-        
-        <section id="projects" class="projects">
-            <h2>Projects</h2>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-                1. <a href="https://github.com/d-navya/image-and-text-compression-using-huffman-algorithm"><img src="project1.png" alt="Project 1" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-                2. <a href="https://github.com/d-navya/project2"><img src="project2.jpg" alt="Project 2" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-                3. <a href="https://github.com/d-navya/project3"><img src="project3.jpg" alt="Project 3" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-                4. <a href="https://github.com/d-navya/project4"><img src="project4.jpg" alt="Project 4" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-                5. <a href="https://github.com/d-navya/project5"><img src="project5.jpg" alt="Project 5" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-                6. <a href="https://github.com/d-navya/project6"><img src="project6.jpg" alt="Project 6" style="width: 150px; height: 150px; border-radius: 10px;"></a>
-            </div>
-        </section>
-        
-        <section id="skills" class="skills">
-            <h2>Skills</h2>
-            <p>C++, Python, Java, C, Matlab, HTML, CSS, JavaScript, pandas, numpy, matplotlib, Scikit-Learn, Algorithm Optimization, Data Analysis & Visualization, Comparative Analysis, Technical Documentation & Reporting, Collaboration & Knowledge Sharing, Critical Thinking & Problem-Solving</p>
-        </section>
-        
-        <section id="contact" class="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:duttulurunavya@gmail.com">duttulurunavya@gmail.com</a> | <a href="https://www.linkedin.com/in/d-navya/" target="_blank">LinkedIn</a> | <a href="https://github.com/d-navya" target="_blank">GitHub</a></p>
-        </section>
+    <div class="crt-effect">
+        <header class="pixel-border">
+            <h1>MY PIXEL PORTFOLIO</h1>
+            <nav>
+                <a href="#about">ABOUT</a>
+                <a href="#work">WORK</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="about" class="pixel-border">
+                <h2>> ABOUT ME_</h2>
+                <p>Welcome to my pixel world! I'm a designer/dev who loves retro aesthetics.</p>
+                <div class="pixel-art"></div>
+            </section>
+
+            <section id="work" class="pixel-border">
+                <h2>> MY WORK_</h2>
+                <div class="pixel-grid">
+                    <div class="pixel-item">PROJECT 1</div>
+                    <div class="pixel-item">PROJECT 2</div>
+                    <div class="pixel-item">PROJECT 3</div>
+                </div>
+            </section>
+
+            <section id="contact" class="pixel-border">
+                <h2>> CONTACT_</h2>
+                <p>Email: <span class="pixel-underline">hello@pixel.me</span></p>
+                <p>Twitter: <span class="pixel-underline">@pixeldev</span></p>
+            </section>
+        </main>
+
+        <footer class="pixel-border">
+            <p>© 2024 - MADE WITH ♥ AND PIXELS</p>
+        </footer>
     </div>
 </body>
 </html>
