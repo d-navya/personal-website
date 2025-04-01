@@ -292,3 +292,38 @@ body {
     color: #fff;
     transform: scale(1.1); /* Hover scale effect */
 }
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: center; /* Aligns the links horizontally in the center */
+    align-items: center;
+    background-color: #0d0d0d; /* Set background to match the page's theme */
+    padding: 20px 0;
+    position: absolute; /* Position it at the bottom */
+    bottom: 0; /* Ensures it's at the bottom of the page */
+    width: 100%; /* Makes sure the navbar takes the full width */
+}
+
+.navbar ul {
+    list-style: none; /* Removes default list styling */
+    display: flex;
+    gap: 20px; /* Creates spacing between links */
+}
+
+.navbar li {
+    display: inline; /* Ensure each link is displayed inline */
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #00ffff; /* Bright color */
+    padding: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ff00ff; /* Color change on hover */
+    transform: scale(1.1); /* Slightly scales up on hover */
+}
