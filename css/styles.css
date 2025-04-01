@@ -327,3 +327,13 @@ body {
     color: #ff00ff; /* Color change on hover */
     transform: scale(1.1); /* Slightly scales up on hover */
 }
+
+.button-group {
+    margin-top: 40px; /* Creates space above the button group */
+    text-align: center; /* Centers the buttons */
+}
+
+.button-group a {
+    display: inline-block;
+    margin: 10px 0; /* Adds vertical spacing between the buttons */
+}
