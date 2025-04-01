@@ -1,89 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); /* Retro Pixel Font */
+/* Import retro pixel font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== Global Styles (Applies to All Pages) ===== */
 body {
-    background: url('../assets/bg-pixel.png') repeat; /* Pixelated background */
+    background: url('../assets/bg-pixel.png') repeat;
     background-color: #0d0d0d;
     font-family: 'VT323', monospace;
-    text-align: center;
     color: #fff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    text-align: center;
 }
 
+/* Main container for page content */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
 }
 
+/* ===== Index Page (Home) ===== */
 .intro-screen {
-    max-width: 800px;
     text-align: center;
     padding: 40px;
     animation: fadeIn 2s ease-out;
-    margin-top: 20px;
 }
 
 .title {
     font-size: 80px;
-    color: #ff00ff; /* Bright color for text */
-    white-space: nowrap; /* Prevents text from wrapping */
+    color: #ff00ff;
+    white-space: nowrap;
 }
 
 .subtitle {
     font-size: 24px;
-    color: #00ffff; /* Neon cyan */
+    color: #00ffff;
     margin-top: 40px;
 }
 
 .start-btn {
     font-size: 24px;
     padding: 20px 40px;
+    background: #00ffff;
+    border: 3px solid #00ffff;
     border-radius: 12px;
     text-decoration: none;
     color: #000;
-    background: #00ffff;
     margin-top: 60px;
-    border: 3px solid #00ffff;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .start-btn:hover {
     background: #ff00ff;
     color: #fff;
-    transform: scale(1.1); /* Hover scale effect */
+    transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .title {
-        font-size: 50px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
-
-    .start-btn {
-        font-size: 18px;
-        padding: 15px 30px;
-    }
-}
-
+/* ===== About Page ===== */
 .about-screen {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 30px;
     text-align: center;
+    padding: 30px;
 }
 
 .character-container {
@@ -113,94 +98,43 @@ body {
     text-decoration: underline;
 }
 
-.start-btn {
-    margin-top: 40px;
-}
-
-.project-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.project {
-    text-align: center;
-    width: 250px;
-    padding: 20px;
+/* "More About" button */
+.glow-btn {
+    font-size: 20px;
+    padding: 15px 30px;
+    background: #00ffff;
     border: 3px solid #00ffff;
-    border-radius: 12px;
-    background-color: #222;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #000;
+    margin-top: 20px;
     transition: all 0.3s ease;
 }
 
-.project:hover {
-    transform: scale(1.05);
-}
-
-.project img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.project p {
-    font-size: 18px;
-    color: #ff00ff;
-    margin-top: 10px;
-}
-
-/* Glowing effect for the "Back to Home" button */
-.back-to-home {
-    font-size: 24px;
-    padding: 15px 25px;
-    background-color: #ff00ff;
+.glow-btn:hover {
+    background: #ff00ff;
     color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-top: 60px;
-    display: inline-block;
-    border: 3px solid #ff00ff;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.1);
 }
 
-.back-to-home:hover {
-    background-color: #00ffff;
-    color: #fff;
-    transform: scale(1.1); /* Hover scale effect */
-}
-
-/* More About Me Page Styling */
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-.title {
-    text-align: center;
-}
-
+/* ===== More About Page ===== */
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    text-align: left;
+    margin-top: 20px;
 }
 
 .favorites-section {
-    margin: 40px 0;
+    margin-bottom: 40px;
 }
 
-.favorites-section h2 { 
+.favorites-section h2 {
     font-size: 26px;
     color: #ff00ff;
-    text-align: left;
 }
 
 .favorites-list {
     list-style: none;
     font-size: 22px;
-    color: #fff;
     padding-left: 0;
 }
 
@@ -211,14 +145,27 @@ body {
     margin: 8px 0;
 }
 
-/* "Back to About" Button */
+/* Back to About button */
 .back-to-home {
+    font-size: 24px;
+    padding: 15px 25px;
+    background-color: #ff00ff;
+    border: 3px solid #ff00ff;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
     display: inline-block;
     margin-top: 30px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Contact Page Styling */
+.back-to-home:hover {
+    background-color: #00ffff;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* ===== Contact Page ===== */
 .contact-links {
     margin-top: 20px;
     text-align: left;
@@ -235,7 +182,6 @@ body {
     margin-right: 10px;
 }
 
-/* Typewriter Effect */
 .typewriter {
     font-size: 20px;
     color: #00ffff;
@@ -255,136 +201,48 @@ body {
     50% { border-color: transparent; }
 }
 
-/* Navigation Button (Same theme as other buttons) */
-.nav-btn {
-    font-size: 24px;
-    padding: 15px 30px;
-    background-color: #ff00ff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    display: inline-block;
-    margin-top: 30px;
-    border: 3px solid #ff00ff;
-    transition: all 0.3s ease;
-}
-
-.nav-btn:hover {
-    background-color: #00ffff;
-    color: #fff;
-    transform: scale(1.1); /* Hover scale effect */
-}
-
-.glow-btn {
-    font-size: 20px;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    background: #00ffff;
-    color: #000;
-    border: 3px solid #00ffff;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
-
-.glow-btn:hover {
-    background: #ff00ff;
-    color: #fff;
-    transform: scale(1.1); /* Hover scale effect */
-}
-
-/* Navbar styles */
+/* ===== Navbar (Applies to All Pages) ===== */
 .navbar {
     display: flex;
-    justify-content: center; /* Aligns the links horizontally in the center */
+    justify-content: center;
     align-items: center;
-    background-color: #0d0d0d; /* Set background to match the page's theme */
     padding: 20px 0;
-    position: relative; /* Position it at the bottom */
-    top: 10px;
-    bottom: 0; /* Ensures it's at the bottom of the page */
-    width: 100%; /* Makes sure the navbar takes the full width */
+    background-color: transparent;
+    margin-top: auto;
 }
 
 .navbar ul {
-    list-style: none; /* Removes default list styling */
+    list-style: none;
     display: flex;
-    gap: 20px; /* Creates spacing between links */
+    justify-content: center;
+    gap: 20px;
 }
 
 .navbar li {
-    display: inline; /* Ensure each link is displayed inline */
+    display: inline;
 }
 
 .navbar a {
     text-decoration: none;
     font-size: 24px;
-    color: #00ffff; /* Bright color */
+    color: #00ffff;
     padding: 10px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #ff00ff; /* Color change on hover */
-    transform: scale(1.1); /* Slightly scales up on hover */
+    color: #ff00ff;
+    transform: scale(1.1);
 }
 
-.button-group {
-    margin-top: 40px; /* Creates space above the button group */
-    text-align: center; /* Centers the buttons */
-}
-
-.button-group a {
-    display: inline-block;
-    margin: 10px 0; /* Adds vertical spacing between the buttons */
-}
-
-/* Ensure the body and container take up full height */
-body, html {
-    height: 100%;
-    margin: 0;
-}
-
-/* Main container that wraps everything */
-.container {
+/* ===== Fix for Scrolling Issue on More About Page ===== */
+.more-about-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the container takes up the full height of the screen */
+    min-height: 100vh;
 }
 
-/* Your content area (about, contact, etc.) */
-.main-content {
-    flex-grow: 1; /* Takes up all available space except for the navbar */
-}
-
-/* Navbar */
-.navbar {
-    padding: 20px 0;
-    text-align: center;
-    background-color: transparent; /* Make navbar background transparent */
-    border-top: none; /* Ensures no gray line or border on top */
-    margin-top: auto; /* Push the navbar to the bottom of the container */
-}
-
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Centers the navbar items */
-}
-
-.navbar li {
-    margin: 0 20px;
-}
-
-.navbar .nav-link {
-    text-decoration: none;
-    color: #ff00ff;
-    font-size: 18px;
-}
-
-.navbar .nav-link:hover {
-    color: #00ffff;
-    transform: scale(1.1);
+.more-about-content {
+    flex-grow: 1;
+    overflow-y: auto;
 }
