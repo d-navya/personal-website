@@ -338,13 +338,31 @@ body {
     margin: 10px 0; /* Adds vertical spacing between the buttons */
 }
 
+/* Ensure the body and container take up full height */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/* Main container that wraps everything */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the container takes up the full height of the screen */
+}
+
+/* Your content area (about, contact, etc.) */
+.main-content {
+    flex-grow: 1; /* Takes up all available space except for the navbar */
+}
+
 /* Navbar */
 .navbar {
-    margin-top: auto; /* Pushes navbar to the bottom of the page */
     padding: 20px 0;
     text-align: center;
     background-color: transparent; /* Make navbar background transparent */
     border-top: none; /* Ensures no gray line or border on top */
+    margin-top: auto; /* Push the navbar to the bottom of the container */
 }
 
 .navbar ul {
