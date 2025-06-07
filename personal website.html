@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D Navya - Developer & Researcher</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Open+Sans:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bb-green: #0F7B0F;
+            --bb-yellow: #FFD700;
+            --bb-dark: #1a1a1a;
+            --bb-light: #f4f4f4;
+            --bb-accent: #ff6b35;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #0F7B0F 0%, #1a5a1a 100%);
+            color: var(--bb-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--bb-yellow);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--bb-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--bb-yellow);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--bb-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #0F7B0F 0%, #1a5a1a 50%, #0d4d0d 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,215,0,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero .name {
+            color: var(--bb-yellow);
+        }
+        
+        .hero .title {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero .description {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--bb-yellow);
+            color: var(--bb-dark);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--bb-light);
+            border: 2px solid var(--bb-light);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--bb-yellow);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* About Section */
+        .about {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(15, 123, 15, 0.2);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .stat-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5rem;
+            color: var(--bb-yellow);
+            display: block;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background: linear-gradient(135deg, #1a5a1a 0%, #0d4d0d 100%);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: rgba(26, 26, 26, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .project-card:hover::before {
+            left: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--bb-yellow);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .project-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            color: var(--bb-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        .project-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-tag {
+            background: var(--bb-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: rgba(15, 123, 15, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            text-align: center;
+        }
+        
+        .skill-category h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            color: var(--bb-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #0F7B0F 0%, #1a5a1a 100%);
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-item {
+            background: rgba(26, 26, 26, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--bb-yellow);
+        }
+        
+        .contact-item h3 {
+            font-family: 'Bebas Neue', cursive;
+            color: var(--bb-yellow);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item a {
+            color: var(--bb-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--bb-yellow);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(26, 26, 26, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card {
+                min-width: unset;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .btn {
+                flex: 1;
+                min-width: 140px;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .project-card {
+                padding: 1.5rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        border-radius: 3px;
+        background: rgba(255, 215, 0, 0.2);
+        color: var(--bb-yellow);
+        border: 1px solid var(--bb-yellow);
+        transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background: var(--bb-yellow);
+        color: var(--bb-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">D • NAVYA</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hello, I'm <span class="name">D Navya</span></h1>
+                <p class="title">Developer • Researcher • Problem Solver</p>
+                <p class="description">
+                    I’m D Navya, a Computer Science + Artificial Intelligence undergrad who enjoys solving hard problems with clean, efficient code.
+I like working deep with algorithms, optimization, and anything that demands structured thinking.
+Always learning, always improving, whether it's systems, logic, or just better ways to build things.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about fade-in">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I’m D Navya, a Computer Science and Artificial Intelligence student with a deep interest in solving complex problems through clean and efficient code. I enjoy working with algorithms and data structures, and I focus on building solutions that are both practical and maintainable. I’m quick to adapt to new tools, but I always prioritize understanding the problem at its core before jumping to solutions.
+                    </p>
+                    <p>
+                        I’m driven by how thoughtfully applied technology can make a real difference. My mindset is grounded in logic, precision, and continuous learning. Outside of tech, I spend time exploring new ideas, playing volleyball, collaborating with peers, or watching a good film.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="navya.jpeg" alt="D Navya" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .about-text p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+    </style>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects fade-in">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">TinyHuff - Optimal Compression</h3>
+                    <p class="project-description">
+                        Web application for compressing text and image files using Huffman coding and 
+                        Chroma Subsampling, achieving significant file size reduction while preserving quality.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Huffman Coding</span>
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">Data Compression</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Urban Navigation Optimization</h3>
+                    <p class="project-description">
+                        Graph-based pathfinding system for dynamic cityscapes, comparing algorithms like 
+                        Dijkstra's, A*, and Greedy Best-First Search across various urban layouts.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Graph Algorithms</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pathfinding</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">EchoVision - AI Assistant</h3>
+                    <p class="project-description">
+                        Real-time object detection and voice assistance system for visually impaired 
+                        individuals, featuring multilingual text-to-speech capabilities.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">TTS</span>
+                        <span class="tech-tag">Accessibility</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">ARP Spoofing Detection</h3>
+                    <p class="project-description">
+                        Network security system using Ettercap and SSH-based defenses to detect and 
+                        mitigate ARP spoofing attacks in local networks.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Cybersecurity</span>
+                        <span class="tech-tag">Network Security</span>
+                        <span class="tech-tag">SSH</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Forest Surveillance System</h3>
+                    <p class="project-description">
+                        Autonomous IoT system for real-time poacher detection using edge computing, 
+                        machine learning, and cloud-based alert mechanisms.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">Edge Computing</span>
+                        <span class="tech-tag">Conservation</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Auralize - Text to Music</h3>
+                    <p class="project-description">
+                        AI-powered framework for automated music processing, including text-to-music 
+                        generation, genre classification, and noise filtering algorithms.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AI Music</span>
+                        <span class="tech-tag">Signal Processing</span>
+                        <span class="tech-tag">Classification</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Mini Home Automation System</h3>
+                    <p class="project-description">
+                        Arduino-based smart home system with sound-activated LEDs, IR motion sensors, 
+                        RGB DJ lights, LDR-based automation, and password-protected door locks.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">Home Automation</span>
+                        <span class="tech-tag">Sensors</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Antimicrobial Resistance Prediction</h3>
+                    <p class="project-description">
+                        Machine learning models to predict antibiotic resistance in Pseudomonas aeruginosa 
+                        using genomic and phenotypic features with SMOTE balancing and PCA reduction.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Healthcare</span>
+                        <span class="tech-tag">Bioinformatics</span>
+                        <span class="tech-tag">Random Forest</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Steganography Detection System</h3>
+                    <p class="project-description">
+                        Hybrid statistical and deep learning framework for detecting hidden information 
+                        in DCT and LSB domains using PCA, SVD, and ensemble stacking classifiers.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Digital Forensics</span>
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">Image Processing</span>
+                        <span class="tech-tag">Ensemble Methods</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills fade-in">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li>Deep Learning</li>
+                        <li>Computer Vision</li>
+                        <li>NLP</li>
+                        <li>Classification</li>
+                        <li>Feature Engineering</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li>C/C++</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cybersecurity</h3>
+                    <ul class="skill-list">
+                        <li>Network Security</li>
+                        <li>Penetration Testing</li>
+                        <li>Cryptography</li>
+                        <li>Ethical Hacking</li>
+                        <li>Security Analysis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>IoT & Hardware</h3>
+                    <ul class="skill-list">
+                        <li>Arduino</li>
+                        <li>Sensor Integration</li>
+                        <li>Edge Computing</li>
+                        <li>Embedded Systems</li>
+                        <li>Cloud Platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact fade-in">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <p>Ready to collaborate on innovative projects or discuss emerging technologies? 
+                   Let's build something amazing together.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <a href="mailto:duttulurunavya@gmail.com">duttulurunavya@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <a href="tel:9108227297">+91 9108227297</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/d-navya/" target="_blank">linkedin.com/in/d-navya</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/d-navya" target="_blank">github.com/d-navya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation highlight
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
